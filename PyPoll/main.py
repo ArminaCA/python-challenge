@@ -44,3 +44,15 @@ with open(CSV_PATH, 'r') as csvfile:
     print('-------------------------')
     print(f'Winner: {winner}')
     print('-------------------------')
+    
+    
+    with open(r'analysis\result.txt', 'w') as outfile:
+        outfile.write('Election Results\n')
+        outfile.write('-------------------------\n')
+        outfile.write(f'Total Votes: {total_votes}\n')
+        outfile.write('-------------------------\n')
+        for candidate in candidates:
+            outfile.write(f'{candidate}: {percentages[candidate]:.3f}% ({votes_per_candidate[candidate]})\n')
+        outfile.write('-------------------------\n')
+        outfile.write(f'Winner: {winner}\n')
+        outfile.write('-------------------------\n')
